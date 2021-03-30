@@ -9,6 +9,8 @@ f) Determine y despliegue*/
 void septimovalor();
 void introducirvalor();
 void inicializar();
+void sumaarreglo();
+void copiararreglo();
 
 int main(void)
 {
@@ -38,37 +40,51 @@ case 'c':
 break;
 
 case 'd': 	
-
-case 'e': 	
+	sumaarreglo();
+case 'e': 
+	copiararreglo();
 break;
 }
 }
 
 void septimovalor()
 {
-	char  palabra[30];
+	char  f[30];
 	printf("Ingrese una palabra, minimo 10 caracteres\n");
-	scanf("%s",palabra);
-	printf("El septimo valor del arreglo es %c\n",palabra[6]);
+	scanf("%s",f);
+	printf("El septimo valor del arreglo es %c\n",f[6]);
 }
 
 void introducirvalor()
 {
-	float  arreglo[10];
+	float  b[10];
 	printf("Ingrese un numero y sera guardado en el 4 elemento del arreglo\n");
-	scanf("%f",&arreglo[4]);
-	printf("El valor ingresado es %f\n",arreglo[4]);
+	scanf("%f",&b[4]);
+	printf("El valor ingresado es %f\n",b[4]);
 }
 
 void inicializar()
 {
-	float  arreglo[5]={8,8,8,8,8};
+	int  g[5]={8,8,8,8,8};
 	int i;
 	
 	printf("Los 5 elementos del arreglo valen 8 \n");
 	for (i= 0; i < 5; i++)
 	{
-		printf("Posici�n: %d   valor del arreglo: %.0f\n",i,arreglo[i]);
+		printf("Posici�n: %d   valor del arreglo: %.0d\n",i,g[i]);
 	}
 
 }
+void sumaarreglo()
+{
+	int arreglo[100], sumatotal, i;
+	for (i= 0; i < 100; i++)
+	{
+		sumatotal= sumatotal+arreglo[i];
+	}
+}
+void copiararreglo()
+{
+	
+}
+				 
