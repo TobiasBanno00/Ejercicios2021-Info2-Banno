@@ -85,6 +85,5 @@ void sumaarreglo()
 }
 void copiararreglo()
 {
-	
 }
 				 
