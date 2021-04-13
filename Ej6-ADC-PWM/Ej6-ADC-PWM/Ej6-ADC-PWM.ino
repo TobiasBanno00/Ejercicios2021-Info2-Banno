@@ -1,3 +1,4 @@
+#include <Arduino.h>
 #define pote A0
 #define led 4
 

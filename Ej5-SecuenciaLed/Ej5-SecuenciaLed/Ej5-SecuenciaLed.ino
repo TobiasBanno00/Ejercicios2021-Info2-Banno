@@ -1,3 +1,5 @@
+#include <Arduino.h>
+
 #define pulsador_A 11
 #define pulsador_B 12
 
