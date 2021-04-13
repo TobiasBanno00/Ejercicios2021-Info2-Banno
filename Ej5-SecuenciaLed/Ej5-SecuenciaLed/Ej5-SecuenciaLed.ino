@@ -34,7 +34,7 @@ void loop()
   }
   else
   {
-    if(digitalRead (pulsador_A)==0&&digitalRead(pulsador_A)==1)
+    if(digitalRead (pulsador_A)==0&&digitalRead(pulsador_B)==1)
     {
     digitalWrite(Led_3,HIGH);
     delay(1000);
