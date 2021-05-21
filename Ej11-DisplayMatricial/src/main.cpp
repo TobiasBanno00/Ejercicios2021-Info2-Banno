@@ -1,6 +1,6 @@
 #include <Arduino.h>
 
-#define TIEMPO 1500
+#define TIEMPO 1500                 //matriz 4x4
 int filaAlto, columnaAlto;
 
 void setup() {
