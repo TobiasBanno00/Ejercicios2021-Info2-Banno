@@ -10,12 +10,12 @@ void setup() {
 }
 
 void loop() {
-for (columnaAlto = B00000001;columnaAlto <= B00001000; columnaAlto = columnaAlto<<1)
+for (filaAlto = B000001;filaAlto <= B001000; filaAlto = filaAlto<<1)
   {
-    PORTB=columnaAlto; 
-    for(filaAlto = B0000001;filaAlto <= B00001000; filaAlto = filaAlto<<1) 
+    PORTB=filaAlto; 
+    for(columnaAlto = B00000001;columnaAlto <= B0001000; columnaAlto = columnaAlto<<1) 
     {
-      PORTD=~filaAlto;
+      PORTD=~columnaAlto;
       delay(TIEMPO);
     }
   }
