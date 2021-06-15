@@ -24,6 +24,6 @@ int main(void)
 
     fclose(archivo);                                    //cerramos el archivo escrito
 
-    printf("NOMBRE DL SENSOR: %c, VALOR DE SENSOR: %d, TIEMPO DEL SENSOR: %d \n", sensor1.tipoSensor,sensor1.valorSensor,sensor1.tiempo);
+    printf("NOMBRE DEL SENSOR: %c, VALOR DE SENSOR: %d, TIEMPO DEL SENSOR: %ld \n", sensor1.tipoSensor,sensor1.valorSensor,sensor1.tiempo);
     return 0;
 }
