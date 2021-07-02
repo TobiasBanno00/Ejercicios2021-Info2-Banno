@@ -5,7 +5,7 @@ struct sensores
         uint32_t tiempo;           //Tiempo transcurrido
         uint16_t valorSensor;           //Valor de sensor
          uint8_t tipoSensor;            //Tipo de sensor leido
-}sensor1,*ptrsensor;                //le damos valores cualquiera a la estructura, esto lo podriamos tmb hacer con un scanf o con un sensor
+}sensor1,*ptrsensor;                
 
 int main(void)
 {

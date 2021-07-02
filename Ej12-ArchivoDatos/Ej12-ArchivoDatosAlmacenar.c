@@ -19,7 +19,7 @@ int main(void)
     return -1;
     }
 
-    fwrite(ptrsensor, sizeof(struct sensores), 1, archivo);        //guardamos la estructura en el archivo.bin
+    fwrite(ptrsensor, sizeof(struct sensores), 1, archivo);        //guardamos la estructura en el archivo.dat
     // fprintf(archivo, 'struct sensores', sensor1);      // ESTO ES USADO PARA ARCHIVOS.TXT !!!! 
     fclose(archivo);                                    //cerramos el archivo escrito
 
