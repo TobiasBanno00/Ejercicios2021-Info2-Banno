@@ -35,11 +35,8 @@ int main()
     while ( !feof(fptr))         //Mientras no se llegue al final
     {
         fread(&Lectura, sizeof(struct Sensores), 1, fptr);
-        printf(" %c                       %d                        %ld \n",
-            Lectura.NSensor,        Lectura.VSensor,          (Lectura.TTSensor)/1000);        //Muestreo datos leidos
-                                                            //El tiempo se divide en 1000 para mostrarse en segundos
+        printf(" %c                       %d                        %ld \n",Lectura.NSensor,Lectura.VSensor, (Lectura.TTSensor)/1000);  //Muestreo datos leidos, el tiempo se divide en 1000 para mostrarse en segundos
     }
-    
     fclose(fptr);                                   //Se cierra el archivo
     return 0;
 }

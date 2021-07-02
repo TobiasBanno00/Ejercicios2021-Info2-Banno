@@ -17,9 +17,9 @@ Conexiones con Arduino UNO
 
 struct sensores
 {
-        uint32_t tiempo;           //Tiempo transcurrido
+        uint32_t tiempo;           //Tiempo transcurrido desde la ultimas lectura
         uint16_t valorSensor;           //Valor de sensor
-        uint8_t tipoSensor;            //Tipo de sensor leido
+        uint8_t tipoSensor;            //Tipo de sensor leido (nombre)
 }sensor1={'H',0,0},*PtrSensores;                //le damos el nombre al sensor
 
 void EscrituraSD(void);     //Funcion  escrituraSD
