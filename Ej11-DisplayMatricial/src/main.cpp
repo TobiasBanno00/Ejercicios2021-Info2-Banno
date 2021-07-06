@@ -1,7 +1,7 @@
 #include <Arduino.h>
 
-#define TIEMPO 1500                 //matriz 4x4
-int filaAlto, columnaAlto;
+#define TIEMPO 1500                 
+int filaAlto, columnaAlto;      //matriz 4x4
 
 void setup() {
   DDRD = DDRD|B00001111;      // de pin 0 a pin 3 como salida   
