@@ -5,7 +5,7 @@ struct producto                     //Estructura
 {
 	uint32_t codigo;           //codigo producto
 	uint16_t precio;           //precio producto
-	char descripcion[25];        //nombre producto
+	char descripcion[100];        //nombre producto
 	
 } productosCargados,*ptrProductos;
 
@@ -13,13 +13,14 @@ struct producto                     //Estructura
 void guardarProductosArchivo(void);
 void cargarProducto(void);
 void lecturaProductoArchivo(void);
-
+void productoPorCodigo(void);
 int main(){
 	int opciones;
 	
 	while (1)
 	{
-		printf(" Preciona: \n -1 si quiere cargar un producto\n -2 si quiere el listado de productos cargados\n -3 si quiere salir\n ");
+		printf(" ------------------------------------------------------\n ");
+		printf(" Preciona: \n -1 si quiere cargar un producto\n -2 si quiere el listado de productos cargados\n -3 si buscar producto por codigo\n-4 si quiere salir\n ");
 		scanf("%d", &opciones);
 		
 		switch (opciones)
@@ -31,13 +32,18 @@ int main(){
 		case 2:
 			lecturaProductoArchivo();
 			break;
-			
+
 		case 3:
+			productoPorCodigo();
+			break;
+			
+		case 4:
 			return 0;
 			break;
 			
 		}
-	}
+	} 
+	
 }
 	
 	void guardarProductosArchivo(void)
@@ -60,14 +66,17 @@ int main(){
 		printf(" Ingrese el codigo del producto a cargar: ");
 		scanf("%ld", &productosCargados.codigo);
 		printf(" --------------------------------------\n ");
+		
 		printf(" Ingrese el nombre del producto a cargar: ");
-		gets(productosCargados.descripcion);
+		getchar();    											 // absorve el enter al ingresar numeros anteriormente y no tira el error en el get
+		gets(productosCargados.descripcion); 
 		printf(" --------------------------------------\n ");
 		printf(" Ingrese el precio del producto a cargar: ");
 		scanf("%d", &productosCargados.precio);
 		printf(" --------------------------------------\n ");
 		guardarProductosArchivo();
 	}
+
 	
 	void lecturaProductoArchivo(void)
 	{
@@ -79,10 +88,46 @@ int main(){
 			printf("Error al abrir archivo!");
 		}
 		
-		fread(ptrProductos, sizeof(struct producto), 1, productos);        //guardamos lo leido en nuestra estructura ya creada
+		 while ( !feof(productos))         //Mientras no se llegue al final
+		 {
+			fread(ptrProductos, sizeof(struct producto), 1, productos);        //guardamos lo leido en nuestra estructura ya creada
+			
+			printf(" ------------------------------------------------------\n ");
+			printf("CODIGO : %ld, NOMBRE: %s, PRECIO: %d \n",productosCargados.codigo,productosCargados.descripcion,productosCargados.precio);
+		 }
 		fclose(productos);                                                 //cerramos el archivo escrito
+	}
+
+	void productoPorCodigo(void)
+	{
+		int codigo;
+		ptrProductos=&productosCargados;
+		printf(" ------------------------------------------------------\n ");
+		printf("Ingrese el codigo del producto que quiere consultar\n ");
+		printf(" ------------------------------------------------------\n ");
+		scanf("%d", &codigo);
+
 		
-		printf("CODIGO : %ld, NOMBRE: %s, PRECIO: %d \n",productosCargados.codigo,productosCargados.descripcion,productosCargados.precio);
+		FILE *productos;                       //declaración puntero archivo
+		productos=fopen("productos.dat","r");    // leemos un archivo.dat
 		
+		if(productos == NULL) {
+			printf("Error al abrir archivo!");
+		}
+		
+		 while ( !feof(productos))         //Mientras no se llegue al final
+		 {
+			fread(ptrProductos, sizeof(struct producto), 1, productos);        //guardamos lo leido en nuestra estructura ya creada
+			
+			if(codigo==productosCargados.codigo)
+			{
+			printf(" ------------------------------------------------------\n ");
+			printf("CODIGO : %ld, NOMBRE: %s, PRECIO: %d \n",productosCargados.codigo,productosCargados.descripcion,productosCargados.precio);
+			
+			}
+		 }
+		fclose(productos);                                                 //cerramos el archivo escrito
+
+
 	}
 	
