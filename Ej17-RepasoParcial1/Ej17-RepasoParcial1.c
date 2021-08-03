@@ -20,7 +20,7 @@ int main(){
 	while (1)
 	{
 		printf(" ------------------------------------------------------\n ");
-		printf(" Preciona: \n -1 si quiere cargar un producto\n -2 si quiere el listado de productos cargados\n -3 si buscar producto por codigo\n-4 si quiere salir\n ");
+		printf(" Preciona: \n -1 si quiere cargar un producto\n -2 si quiere el listado de productos cargados\n -3 si buscar producto por codigo\n  -4 si quiere salir\n");
 		scanf("%d", &opciones);
 		
 		switch (opciones)
@@ -70,6 +70,7 @@ int main(){
 		printf(" Ingrese el nombre del producto a cargar: ");
 		getchar();    											 // absorve el enter al ingresar numeros anteriormente y no tira el error en el get
 		gets(productosCargados.descripcion); 
+		printf(" --------------------------------------\n ");
 		printf(" --------------------------------------\n ");
 		printf(" Ingrese el precio del producto a cargar: ");
 		scanf("%d", &productosCargados.precio);
