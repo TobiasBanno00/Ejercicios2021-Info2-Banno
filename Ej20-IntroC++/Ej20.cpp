@@ -15,8 +15,9 @@ int main()
     int codigopostal;
 
     cout<<"ingrese su nombre"<<"\n";
-    cin>>nombre;
-    cout<<"ingrese su domicilio"<<"\n";
+    cin>>nombre;                             //cin.getline(numbre,40)  PARA ESPACIOS
+                                            // cin.ignore(); IGNORA EL ENTER                        
+    cout<<"ingrese su domicilio"<<"\n";       
     cin>>domicilio;
     cout<<"ingrese su ciudad"<<"\n";
     cin>>ciudad;
