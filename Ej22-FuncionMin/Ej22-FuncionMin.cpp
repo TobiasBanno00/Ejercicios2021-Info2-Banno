@@ -4,12 +4,11 @@ min para que soporte los tipos de datos int y float. */
 
 #include<iostream>
 
-using std::cout;
-using std::cin;
-using std::endl;
+using namespace std;
 
 int minn (int n1=3, int n2=5);
 float minn (float n1=3, float n2=5);
+
 int main()
 {
     cout << "Float: " << minn(float (2.33), float (6.33));
@@ -20,7 +19,7 @@ int main()
 
 int minn (int n1=3, int n2=5)
 {
-    if (n1<n2)          //return a<b ? a : b;
+    if (n1<n2)          
     {
         return n1;
     }
