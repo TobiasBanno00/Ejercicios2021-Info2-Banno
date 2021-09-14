@@ -5,8 +5,8 @@ Evalúe el programa utilizando un par de enteros, uno de caracteres y uno de pun
 
 using namespace std;
 
-template < class T >
-T minn (T v1, T v2)
+template < class menor >
+menor minn (menor v1, menor v2)
 {
     if(v1 <= v2){
         return v1;
