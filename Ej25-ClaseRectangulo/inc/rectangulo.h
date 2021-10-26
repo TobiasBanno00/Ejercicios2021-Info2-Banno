@@ -1,5 +1,6 @@
 #ifndef RECTANGULO_H
 #define RECTANGULO_H
+#include <iostream>
 
 class rectangulo
 {
@@ -28,3 +29,4 @@ class rectangulo
     float x,y,l,a;
 };
 #endif
+

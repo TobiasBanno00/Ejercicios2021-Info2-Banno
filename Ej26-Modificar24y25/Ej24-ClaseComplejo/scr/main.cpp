@@ -14,7 +14,6 @@ Crear un programa que utilice dicha clase y pruebe todas las funcionalidades */
 #include <iostream>
 #include "../inc/complejo.h"
 
-
 using namespace std;
 
 int main(){
